@@ -13,7 +13,7 @@
         <property name="lastname"/>
         
         <!-- 对于多对多，关联表是必须的 。table表示表名-->
-        <set name="events" table="PERSON_EVENT">
+        <set name="events" table="PERSON_EVENT" cascade="save-update">
             <key column="PERSON_ID"></key>
             <many-to-many column="EVENT_ID" class="Event"></many-to-many>
         </set>

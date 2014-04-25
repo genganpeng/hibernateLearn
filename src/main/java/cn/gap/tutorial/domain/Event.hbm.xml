@@ -13,5 +13,11 @@
         <!-- 这里的type是hibernate mapping type，不写type的时候hibernate会自动凑够JavaBean中的类型转换成数据库中的类型，最好自己写上，否则影响性能 -->
         <property name="date" type="timestamp" column="EVENT_DATE"/>
         <property name="title"/>
+        <!-- 对于多对多，关联表是必须的 。table表示表名-->
+        <!-- 对于many to many，必须有一端设置inverse，这样这一端就不需要维护中间表了-->
+        <set name="participants" table="PERSON_EVENT" inverse="true">
+            <key column="EVENT_ID"></key>
+            <many-to-many column="PERSON_ID" class="Person"></many-to-many>
+        </set>
     </class>
 </hibernate-mapping>

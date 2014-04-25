@@ -1,6 +1,8 @@
 package cn.gap.tutorial.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Event {
 	private Long id;
@@ -24,4 +26,13 @@ public class Event {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	private Set participants = new HashSet();
+
+    public Set getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set participants) {
+        this.participants = participants;
+    }
 }

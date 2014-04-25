@@ -30,6 +30,6 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping resource="cn/gap/tutorial/domain/Event.hbm.xml"/>
-
+        <mapping resource="cn/gap/tutorial/domain/Person.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

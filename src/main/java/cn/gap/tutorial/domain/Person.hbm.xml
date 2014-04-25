@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.gap.tutorial.domain">
+
+    <class name="Person" table="PERSON">
+        <id name="id" column="PERSON_ID">
+            <generator class="native"/>
+        </id>
+        <property name="age"/>
+        <property name="firstname"/>
+        <property name="lastname"/>
+        
+        <!-- 对于多对多，关联表是必须的 。table表示表名-->
+        <set name="events" table="PERSON_EVENT">
+            <key column="PERSON_ID"></key>
+            <many-to-many column="EVENT_ID" class="Event"></many-to-many>
+        </set>
+    </class>
+
+</hibernate-mapping>

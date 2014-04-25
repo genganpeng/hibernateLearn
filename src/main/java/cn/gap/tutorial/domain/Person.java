@@ -55,5 +55,29 @@ public class Person {
 	public void setEvents(Set events) {
 		this.events = events;
 	}
+	
+	/**
+	 * 			  _____________        __________________
+				 |             |      |                  |       _____________
+				 |   EVENTS    |      |   PERSON_EVENT   |      |             |       ___________________
+				 |_____________|      |__________________|      |    PERSON   |      |                   |
+				 |             |      |                  |      |_____________|      | PERSON_EMAIL_ADDR |
+				 | *EVENT_ID   | <--> | *EVENT_ID        |      |             |      |___________________|
+				 |  EVENT_DATE |      | *PERSON_ID       | <--> | *PERSON_ID  | <--> |  *PERSON_ID       |
+				 |  TITLE      |      |__________________|      |  AGE        |      |  *EMAIL_ADDR      |
+				 |_____________|                                |  FIRSTNAME  |      |___________________|
+				                                                |  LASTNAME   |
+				                                                |_____________|
+ 
+	 */
+	private Set emailAddresses = new HashSet();
+
+    public Set getEmailAddresses() {
+        return emailAddresses;
+    }
+
+    public void setEmailAddresses(Set emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
     
 }

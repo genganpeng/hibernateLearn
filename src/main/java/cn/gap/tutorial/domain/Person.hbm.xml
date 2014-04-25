@@ -17,6 +17,14 @@
             <key column="PERSON_ID"></key>
             <many-to-many column="EVENT_ID" class="Event"></many-to-many>
         </set>
+        
+        <!-- 不是引用另一个实体，而是一个collection
+        	key定了在collection表中的外键
+        	PERSON_EMAIL_ADDR是一个所有表的联合主键 -->
+        <set name="emailAddresses" table="PERSON_EMAIL_ADDR">
+            <key column="PERSON_ID"/>
+            <element type="string" column="EMAIL_ADDR"/>
+        </set>
     </class>
 
 </hibernate-mapping>
